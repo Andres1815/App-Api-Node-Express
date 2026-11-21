@@ -45,47 +45,34 @@ class _MainScreenState extends State<MainScreen> {
   int currentLevel = 1;
 
   List<Map<String, dynamic>> challenges = [
-    {"title": "Apagar luces innecesarias", "icon": Icons.lightbulb_outline},
-    {"title": "Usar botella reutilizable", "icon": Icons.water_drop_outlined},
-    {"title": "Reciclar papel o cartón", "icon": Icons.recycling},
-    {"title": "Ahorrar agua al bañarse", "icon": Icons.shower},
-    {
-      "title": "Caminar en lugar de usar vehículo",
-      "icon": Icons.directions_walk,
-    },
-    {
-      "title": "Llevar tu propia bolsa al supermercado",
-      "icon": Icons.shopping_bag,
-    },
-
-    {"title": "Desconectar cargadores sin uso", "icon": Icons.power},
-    {"title": "Separar residuos orgánicos", "icon": Icons.delete_outline},
-    {"title": "Usar transporte público", "icon": Icons.directions_bus},
-    {"title": "Plantar una planta o árbol", "icon": Icons.park},
-    {"title": "Reducir el uso de plástico", "icon": Icons.no_drinks},
-    {"title": "Reutilizar hojas impresas", "icon": Icons.description},
-    {"title": "Apagar el computador al terminar", "icon": Icons.computer},
-    {"title": "Consumir productos locales", "icon": Icons.store},
-    {
-      "title": "Recoger basura de espacios públicos",
-      "icon": Icons.cleaning_services,
-    },
-    {"title": "Usar focos LED", "icon": Icons.light},
-    {"title": "Evitar desperdiciar alimentos", "icon": Icons.restaurant},
-    {"title": "Cerrar la llave al cepillarse", "icon": Icons.water},
-    {"title": "Donar ropa que no uses", "icon": Icons.checkroom},
-    {"title": "Compartir un consejo ecológico", "icon": Icons.share},
+    {"title": "Separar papel y cartón limpios", "icon": Icons.description},
+    {"title": "Lavar y secar envases aprovechables", "icon": Icons.local_drink},
+    {"title": "Depositar residuos aprovechables en la caneca blanca", "icon": Icons.recycling},
+    {"title": "Identificar los residuos no aprovechables", "icon": Icons.delete_outline},
+    {"title": "Separar los residuos orgánicos aprovechables", "icon": Icons.compost},
+    {"title": "Evitar mezclar residuos limpios con residuos contaminados", "icon": Icons.remove_circle_outline},
+    {"title": "Reutilizar un recipiente antes de desecharlo", "icon": Icons.replay},
+    {"title": "Reducir el uso de productos desechables", "icon": Icons.no_drinks},
+    {"title": "Reconocer el código de colores de separación", "icon": Icons.palette},
+    {"title": "Disponer correctamente pilas y residuos especiales", "icon": Icons.battery_alert},
+    {"title": "Aprovechar restos vegetales para compostaje", "icon": Icons.grass},
+    {"title": "Consultar dónde entregar materiales reciclables", "icon": Icons.location_on},
+    {"title": "Enseñar a otra persona cómo separar residuos", "icon": Icons.people},
+    {"title": "Revisar la separación de residuos en casa", "icon": Icons.home},
+    {"title": "Evitar arrojar basura en calles, canales y playas", "icon": Icons.cleaning_services},
+    {"title": "Preferir productos con menos empaques", "icon": Icons.shopping_bag},
+    {"title": "Separar correctamente latas y envases metálicos", "icon": Icons.inventory_2},
+    {"title": "Doblar y almacenar el cartón limpio y seco", "icon": Icons.all_inbox},
+    {"title": "Identificar los residuos que no van en reciclaje común", "icon": Icons.info_outline},
+    {"title": "Participar en una jornada de limpieza comunitaria", "icon": Icons.volunteer_activism},
   ];
 
   final List<Map<String, dynamic>> extraChallenges = [
-    {"title": "Crear una compostera casera", "icon": Icons.grass},
-    {"title": "Usar bicicleta durante un día", "icon": Icons.pedal_bike},
-    {"title": "Comprar productos ecológicos", "icon": Icons.eco},
-    {
-      "title": "Participar en una limpieza comunitaria",
-      "icon": Icons.cleaning_services,
-    },
-    {"title": "Crear un huerto casero", "icon": Icons.yard},
+    {"title": "Preparar una pequeña compostera", "icon": Icons.compost},
+    {"title": "Organizar un punto de separación en casa", "icon": Icons.delete_sweep},
+    {"title": "Realizar una limpieza de un espacio comunitario", "icon": Icons.cleaning_services},
+    {"title": "Investigar cómo se aprovecha el aceite de cocina usado", "icon": Icons.oil_barrel},
+    {"title": "Crear una guía de separación para la familia", "icon": Icons.menu_book},
     
   ];
 
@@ -277,7 +264,7 @@ class HomeTab extends StatelessWidget {
                       ),
                       const SizedBox(height: 12),
                       const Text(
-                        '❄️ Mantén el refrigerador a 3-5°C y el congelador a -18°C. Así consumes menos energía.',
+                        'Antes de tirar algo a la basura, identifica si puede aprovecharse. Deposita el papel, cartón, plástico, vidrio y metales limpios y secos en el recipiente blanco. Así facilitas el reciclaje y evitas que materiales útiles terminen en el relleno sanitario.',
                         style: TextStyle(fontSize: 15),
                       ),
                     ],
@@ -286,37 +273,77 @@ class HomeTab extends StatelessWidget {
               ),
 
               const SizedBox(height: 24),
-              const Text(
-                'Datos que te inspirarán',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 12),
-              Expanded(
-                child: ListView(
-                  children: const [
-                    EcoFactCard(
-                      icon: Icons.forest,
-                      title:
-                          'Un árbol puede absorber hasta 22 kg de CO₂ al año',
-                      description:
-                          'Plantar un árbol es una de las acciones más efectivas contra el cambio climático.',
-                    ),
-                    EcoFactCard(
-                      icon: Icons.water_drop,
-                      title:
-                          'Cerrar la llave mientras te cepillas ahorra 12 litros de agua',
-                      description:
-                          'Si todos lo hicieran, se salvarían millones de litros diarios.',
-                    ),
-                    EcoFactCard(
-                      icon: Icons.recycling,
-                      title: 'El plástico tarda hasta 500 años en degradarse',
-                      description:
-                          'Reduce, reusa y recicla para frenar la contaminación.',
-                    ),
-                  ],
-                ),
-              ),
+const Text(
+  'Aprende sobre la gestión de residuos',
+  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+),
+const SizedBox(height: 12),
+Expanded(
+  child: ListView(
+    children: const [
+      EcoFactCard(
+        icon: Icons.recycling,
+        title: 'Separar los residuos facilita su aprovechamiento',
+        description:
+            'Clasificar correctamente los residuos permite recuperar materiales que pueden transformarse en nuevos productos.',
+      ),
+      EcoFactCard(
+        icon: Icons.delete_outline,
+        title: 'El color blanco identifica los residuos aprovechables',
+        description:
+            'En Colombia, el recipiente blanco se utiliza para depositar plástico, cartón, papel, vidrio y metales limpios y secos.',
+      ),
+      EcoFactCard(
+        icon: Icons.delete,
+        title: 'El recipiente negro es para residuos no aprovechables',
+        description:
+            'Allí se depositan residuos como papel higiénico usado, servilletas contaminadas y otros materiales que no pueden aprovecharse.',
+      ),
+      EcoFactCard(
+        icon: Icons.eco,
+        title: 'Los residuos orgánicos pueden convertirse en abono',
+        description:
+            'Restos de frutas, verduras y otros residuos orgánicos pueden aprovecharse mediante procesos como el compostaje.',
+      ),
+      EcoFactCard(
+        icon: Icons.water_drop,
+        title: 'Los envases deben estar limpios y secos',
+        description:
+            'Antes de depositar recipientes reciclables, procura vaciarlos, limpiarlos y dejarlos secar para evitar contaminar otros materiales.',
+      ),
+      EcoFactCard(
+        icon: Icons.battery_full,
+        title: 'Las pilas usadas necesitan una disposición especial',
+        description:
+            'No deben mezclarse con los residuos domésticos. Llévalas a puntos de recolección autorizados para su manejo adecuado.',
+      ),
+      EcoFactCard(
+        icon: Icons.shopping_bag,
+        title: 'Reducir el consumo también ayuda a gestionar los residuos',
+        description:
+            'Utilizar bolsas reutilizables, evitar productos desechables y comprar solo lo necesario disminuye la cantidad de basura generada.',
+      ),
+      EcoFactCard(
+        icon: Icons.local_shipping,
+        title: 'Los residuos tienen diferentes destinos',
+        description:
+            'Algunos materiales pueden reciclarse, otros convertirse en abono y los que no son aprovechables requieren una disposición final adecuada.',
+      ),
+      EcoFactCard(
+        icon: Icons.beach_access,
+        title: 'La basura en las calles puede llegar al mar',
+        description:
+            'Los residuos abandonados pueden ser arrastrados por la lluvia hacia canales, cuerpos de agua y playas, afectando los ecosistemas.',
+      ),
+      EcoFactCard(
+        icon: Icons.lightbulb_outline,
+        title: 'Las tres R promueven un consumo responsable',
+        description:
+            'Reducir, reutilizar y reciclar son acciones fundamentales para disminuir los residuos y aprovechar mejor los recursos.',
+      ),
+    ],
+  ),
+),
             ],
           ),
         ),
@@ -495,78 +522,50 @@ class LearnTab extends StatelessWidget {
             padding: const EdgeInsets.all(16),
             child: ListView(
               children: [
-                _buildArticle(
-                  '🌍 ¿Qué es la Huella de Carbono?',
-                  'La huella de carbono es la cantidad de gases de efecto invernadero que producimos con nuestras actividades diarias...',
-                  Icons.eco,
-                ),
-                _buildArticle(
-                  '💧 El Poder del Agua',
-                  'Solo el 2.5% del agua del planeta es dulce, y gran parte está en glaciares...',
-                  Icons.water_drop,
-                ),
-                _buildArticle(
-                  '♻️ La Regla de las 3R',
-                  'Reducir, Reutilizar y Reciclar...',
+                 _buildArticle(
+                  '♻️ ¿Qué significa gestionar los residuos?',
+                  'La gestión de residuos comprende las acciones para reducir, separar, almacenar, recolectar y aprovechar los materiales que descartamos. Una buena gestión evita que muchos residuos terminen en calles, canales, cuerpos de agua y espacios naturales.',
                   Icons.recycling,
                 ),
                 _buildArticle(
-                  '🚲 Movilidad Sostenible',
-                  'Caminar, usar bicicleta o transporte público reduce emisiones...',
-                  Icons.directions_bike,
+                  '⚪ Residuos aprovechables: caneca blanca',
+                  'Deposita papel, cartón, plástico, vidrio y metales. Estos materiales deben estar vacíos, limpios y secos para facilitar su aprovechamiento. Si están contaminados con comida o líquidos, pueden dejar de ser aprovechables.',
+                  Icons.delete_outline,
                 ),
                 _buildArticle(
-                  '🌍 ¿Qué es la Huella de Carbono?',
-                  'La huella de carbono es la cantidad de gases de efecto invernadero que producimos con nuestras actividades diarias, como usar transporte, consumir electricidad o comprar productos. Reducirla ayuda a combatir el cambio climático.',
-                  Icons.eco,
+                  '⚫ Residuos no aprovechables: caneca negra',
+                  'En esta categoría se depositan residuos que no pueden aprovecharse en el esquema ordinario de separación, como papel higiénico, servilletas usadas, papeles metalizados y residuos contaminados con comida o grasa.',
+                  Icons.delete,
                 ),
-
                 _buildArticle(
-                  '💧 El Poder del Agua',
-                  'Solo el 2.5% del agua del planeta es dulce, y gran parte está congelada en glaciares. Ahorrar agua en actividades cotidianas ayuda a garantizar este recurso para futuras generaciones.',
-                  Icons.water_drop,
+                  '🟢 Residuos orgánicos aprovechables: caneca verde',
+                  'Incluye restos de comida y residuos vegetales que pueden aprovecharse mediante procesos como el compostaje, de acuerdo con las condiciones del sistema de recolección disponible.',
+                  Icons.compost,
                 ),
-
                 _buildArticle(
-                  '♻️ La Regla de las 3R',
-                  'Reducir, Reutilizar y Reciclar son acciones fundamentales para disminuir la cantidad de residuos que terminan en vertederos y océanos.',
-                  Icons.recycling,
+                  '🧴 ¿Cómo preparar los materiales reciclables?',
+                  'Vacía los envases, retira los restos de comida, enjuágalos cuando sea necesario y déjalos secar. Mantén el papel y el cartón secos. Evita mezclar materiales aprovechables con residuos sanitarios o grasosos.',
+                  Icons.local_drink,
                 ),
-
                 _buildArticle(
-                  '🚲 Movilidad Sostenible',
-                  'Caminar, usar bicicleta o transporte público reduce las emisiones contaminantes y mejora la calidad del aire en las ciudades.',
-                  Icons.directions_bike,
+                  '🔋 ¿Qué hacer con pilas y residuos especiales?',
+                  'Las pilas, baterías, medicamentos vencidos, bombillas y aparatos electrónicos no deben mezclarse con los residuos ordinarios. Busca programas o puntos de recolección posconsumo autorizados para entregarlos de forma segura.',
+                  Icons.battery_alert,
                 ),
-
                 _buildArticle(
-                  '⚡ Ahorro de Energía',
-                  'Apagar luces innecesarias, desconectar cargadores y utilizar bombillas LED puede reducir significativamente el consumo eléctrico en el hogar.',
-                  Icons.bolt,
+                  '🍂 ¿Qué es el compostaje?',
+                  'Es un proceso mediante el cual ciertos residuos orgánicos se transforman en abono. Se pueden aprovechar restos vegetales y de frutas, evitando incorporar materiales que no sean adecuados para el sistema de compostaje utilizado.',
+                  Icons.grass,
                 ),
-
                 _buildArticle(
-                  '🌳 Importancia de los Árboles',
-                  'Los árboles absorben dióxido de carbono, producen oxígeno y ayudan a regular la temperatura del planeta. Plantar árboles contribuye a la conservación ambiental.',
-                  Icons.park,
+                  '🌊 ¿Por qué es importante en Cartagena?',
+                  'La disposición inadecuada de residuos puede afectar calles, canales, playas, manglares y cuerpos de agua. Separar en la fuente, reducir los desechables y disponer correctamente la basura ayuda a proteger los espacios naturales y la calidad de vida de la comunidad.',
+                  Icons.water,
                 ),
-
                 _buildArticle(
-                  '🛍️ Consumo Responsable',
-                  'Comprar solo lo necesario, elegir productos duraderos y evitar el desperdicio ayuda a reducir la explotación excesiva de recursos naturales.',
-                  Icons.shopping_cart,
-                ),
-
-                _buildArticle(
-                  '🥤 Reduce el Uso de Plásticos',
-                  'Utilizar botellas reutilizables, bolsas de tela y recipientes reutilizables disminuye la contaminación causada por plásticos de un solo uso.',
-                  Icons.no_drinks,
-                ),
-
-                _buildArticle(
-                  '🍃 Energías Renovables',
-                  'La energía solar, eólica e hidráulica son alternativas limpias que ayudan a reducir la dependencia de combustibles fósiles.',
-                  Icons.solar_power,
+                  '🔄 Las 3R: reducir, reutilizar y reciclar',
+                  'Reducir significa consumir menos y evitar residuos innecesarios. Reutilizar consiste en dar nuevos usos a los objetos. Reciclar permite transformar materiales aprovechables para incorporarlos nuevamente a procesos productivos.',
+                  Icons.autorenew,
                 ),
               ],
             ),
@@ -759,33 +758,33 @@ class ImpactTab extends StatelessWidget {
 
           const SizedBox(height: 25),
 
-          ImpactCard(
-            icon: Icons.forest,
-            title: 'CO₂ evitado',
-            value: '${completed * 2} kg',
-            color: Colors.teal,
-          ),
+         ImpactCard(
+  icon: Icons.recycling,
+  title: 'Residuos separados',
+  value: '$completed',
+  color: Colors.green,
+),
 
-          ImpactCard(
-            icon: Icons.water_drop,
-            title: 'Agua ahorrada',
-            value: '${completed * 15} litros',
-            color: Colors.blue,
-          ),
+ImpactCard(
+  icon: Icons.eco,
+  title: 'Acciones de reutilización',
+  value: '$completed',
+  color: Colors.teal,
+),
 
-          ImpactCard(
-            icon: Icons.recycling,
-            title: 'Residuos reciclados',
-            value: '${completed * 3} kg',
-            color: Colors.green,
-          ),
+ImpactCard(
+  icon: Icons.compost,
+  title: 'Acciones de aprovechamiento',
+  value: '$completed',
+  color: Colors.lightGreen,
+),
 
-          ImpactCard(
-            icon: Icons.energy_savings_leaf,
-            title: 'Energía ahorrada',
-            value: '${completed * 5} kWh',
-            color: Colors.orange,
-          ),
+ImpactCard(
+  icon: Icons.school,
+  title: 'Actividades educativas',
+  value: '$completed',
+  color: Colors.blue,
+),
 
           const SizedBox(height: 25),
 
@@ -807,31 +806,31 @@ class ImpactTab extends StatelessWidget {
               if (completed >= 5)
                 const Chip(
                   avatar: Icon(Icons.eco),
-                  label: Text("Eco Inicial"),
+                  label: Text("Eco-Inicial"),
                 ),
 
               if (completed >= 10)
                 const Chip(
                   avatar: Icon(Icons.recycling),
-                  label: Text("Reciclador"),
+                  label: Text("Eco-Reciclador"),
                 ),
 
               if (completed >= 15)
                 const Chip(
                   avatar: Icon(Icons.water_drop),
-                  label: Text("Ahorrador de Agua"),
+                  label: Text("Eco-Reciclador II"),
                 ),
 
               if (completed >= 20)
                 const Chip(
                   avatar: Icon(Icons.forest),
-                  label: Text("Protector Verde"),
+                  label: Text("Eco-Protector Verde"),
                 ),
 
               if (completed >= 25)
                 const Chip(
                   avatar: Icon(Icons.emoji_events),
-                  label: Text("Eco Campeón"),
+                  label: Text("Eco-Campeón"),
                 ),
             ],
           ),
